@@ -5,6 +5,12 @@ function App() {
   let [isRed, setRed] = useState(false);
   let [count, setCount] = useState(0);
 
+  const [users, setUsers] = useState([
+    {name: 'Ed', message: 'hi there', likes: 7},
+    {name: 'Jennifer', message: 'good morning!', likes: 426},
+    {name: 'Tony', message: "I'm having a great day :)!!", likes: 82}
+  ]);
+
   const increment = () => {
     setCount(count + 1);
     // '!isRed' sets the state to the opposite of what it currently is.  So if isRead = false, set it to true and vice versa
@@ -18,9 +24,9 @@ function App() {
   return (
     <div>
       <div className="app">
-        <Tweet name="Bob" message="Hi, how is everyone doing!?" likes="7" />
-        <Tweet name="Timmy" message="I can't wait for dinner!" likes="466" />
-        <Tweet name="Jessica" message="hellow world" likes="26" />
+        {users.map(user =>(
+        <Tweet name={user.name} message={user.message} likes={user.likes}/>
+      ))}
       </div>
       <div className="app">
         {/* on below className, if isRed state == true, set className to 'red' css class.  Otherwise use 'green' css className */}
