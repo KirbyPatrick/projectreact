@@ -1,5 +1,5 @@
 .app {
-  min-height: 100vh;
+  min-height: 50vh;
   background: rgb(172, 225, 243);
   display: flex;
   justify-content: space-around;
@@ -15,4 +15,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.red{
+  color: red;
+  font-size: 50px;
+}
+
+.green{
+  color: green;
+  font-size: 50px;
 }
